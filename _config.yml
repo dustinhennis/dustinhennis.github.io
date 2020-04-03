@@ -1,11 +1,9 @@
-title: Your awesome title
+title: dustinhennis GitHub Pages
 author:
-  name: GitHub User
-  email: your-email@domain.com
+  name: Dustin Hennis
+  email: dustin at protocol96 dot com
 description: > # this means to ignore newlines until "show_excerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  My GitHub pages site for random posts and testing
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -16,8 +14,8 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
+    twitter: dustinhennis
+    github:  dustinhennis
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
