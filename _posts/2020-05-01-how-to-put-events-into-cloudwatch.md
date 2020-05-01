@@ -1,7 +1,6 @@
 ---
 layout: post
 ---
-## How To: Put events into CloudWatch log streams
 
 The following provides an overview of how to manually inject messages into AWS CloudWatch log streams.  This can be usefule for testing any CloudWatch metric filters looking for specific log messages.
 
@@ -34,13 +33,13 @@ Returns the following response (example)
 aws logs put-log-events \
 --log-group-name log_group_name \
 --log-stream-name stream_name \
---log-events file://aws-cloudwatch-log-events.json \
+--log-events file://events.json \
 --sequence-token 49601496708150489434817690129464993209400204711539685554 \
 --profile profile_name \
 --region us-east-1
 {% endhighlight %}
 
 ---
-[AWS CLI User Guide: Configuration and Credential File Settings]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+[AWS CLI User Guide: Configuration and Credential File Settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
-[AWS CLI Command Reference: logs/put-log-events]: https://docs.aws.amazon.com/cli/latest/reference/logs/put-log-events.html
+[AWS CLI Command Reference: logs/put-log-events](https://docs.aws.amazon.com/cli/latest/reference/logs/put-log-events.html)
