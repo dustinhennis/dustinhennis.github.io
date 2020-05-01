@@ -5,29 +5,32 @@ layout: post
 
 The following provides an overview of how to manually inject messages into AWS CloudWatch log streams.  This can be usefule for testing any CloudWatch metric filters looking for specific log messages.
 
-1. Create events file (ie. events.json)
+### Create events file (ie. events.json)
 
 {% gist fd7d81a6c6cca3af2f06c810a24e32f7 %}
 
-2. Put log events
-```
+### Put log events
+
+{% highlight shell %}
 aws logs put-log-events \
 --log-group-name log_group_name \
 --log-stream-name stream_name \
 --log-events file://events.json \
 --profile profile_name \
 --region us-east-1
-```
+{% endhighlight %}
 
-Returns the following response
-```
+Returns the following response (example)
+
+{% highlight json %}
 {
     "nextSequenceToken": "49601496708150489434817690129464993209400204711539685554"
 }
-```
+{% endhighlight %}
 
-3. Put log events using the sequence token
-```
+### Put log events using the sequence token
+
+{% highlight shell %}
 aws logs put-log-events \
 --log-group-name log_group_name \
 --log-stream-name stream_name \
@@ -35,9 +38,9 @@ aws logs put-log-events \
 --sequence-token 49601496708150489434817690129464993209400204711539685554 \
 --profile profile_name \
 --region us-east-1
-```
+{% endhighlight %}
 
 ---
-[^1]: [AWS CLI User Guide: Configuration and Credential File Settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+[AWS CLI User Guide: Configuration and Credential File Settings]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 
-[^2]: [AWS CLI Command Reference: logs/put-log-events](https://docs.aws.amazon.com/cli/latest/reference/logs/put-log-events.html)
+[AWS CLI Command Reference: logs/put-log-events]: https://docs.aws.amazon.com/cli/latest/reference/logs/put-log-events.html
