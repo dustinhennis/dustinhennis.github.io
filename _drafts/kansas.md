@@ -5,7 +5,7 @@ permalink: /pages/states/kansas
 ---
 # Kansas
 
-![Kansas Location](https://upload.wikimedia.org/wikipedia/commons/a/a6/Kansas_in_United_States.svg)[^1]
+[//]: # (![Kansas Location]&#40;https://upload.wikimedia.org/wikipedia/commons/a/a6/Kansas_in_United_States.svg&#41;[^1])
 ![Kansas Atlas](https://upload.wikimedia.org/wikipedia/commons/4/46/National-atlas-kansas.PNG)
 
 | Kansas City | News Source(s) |
