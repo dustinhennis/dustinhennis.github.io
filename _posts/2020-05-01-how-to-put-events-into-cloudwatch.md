@@ -2,7 +2,7 @@
 layout: post
 ---
 
-The following provides an overview of how to manually inject messages into AWS CloudWatch log streams.  This can be usefule for testing any CloudWatch metric filters looking for specific log messages.
+The following provides an overview of how to manually inject messages into AWS CloudWatch log streams.  This can be useful for testing any CloudWatch metric filters looking for specific log messages.
 
 ### Create events file (ie. events.json)
 
