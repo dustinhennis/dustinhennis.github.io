@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: aws cloudwatch
 ---
 
 The following provides an overview of how to manually inject messages into AWS CloudWatch log streams.  This can be useful for testing any CloudWatch metric filters looking for specific log messages.
@@ -43,3 +44,12 @@ aws logs put-log-events \
 [AWS CLI User Guide: Configuration and Credential File Settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 [AWS CLI Command Reference: logs/put-log-events](https://docs.aws.amazon.com/cli/latest/reference/logs/put-log-events.html)
+
+---
+### Tags
+
+{%- if page.tags -%}
+    {% for tag in page.tags %}
+[#{{ tag }}](http://dustinhennis.github.io/tags#{{tag | slugize}})
+    {% endfor %}
+{%- endif -%}
