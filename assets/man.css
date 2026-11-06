@@ -1,0 +1,74 @@
+/* Full-width man(1) page: header/footer rails span the screen, sections hang at a 7ch indent like groff output. */
+:root {
+  --bg: #000000;
+  --fg: #c4c4c4;        /* console grey for running text */
+  --bright: #ffffff;    /* bold = white, as a VT does it */
+  --dim: #7a7a7a;
+  --hover: #1a1a1a;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --indent: 7ch;
+  --gutter: 20px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.6 var(--mono);
+  margin: 0;
+  padding: 20px var(--gutter) 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+b, h2, dt { color: var(--bright); font-weight: 600; }
+.u { text-decoration: underline; text-underline-offset: 3px; }
+.dim { color: var(--dim); }
+
+a { color: var(--bright); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--dim); }
+a:hover { text-decoration-color: var(--bright); background: var(--hover); }
+a:focus-visible { outline: 1px solid var(--bright); outline-offset: 2px; }
+::selection { background: var(--bright); color: var(--bg); }
+
+/* Header/footer: NAME(1) ... title ... NAME(1) */
+.rail { display: flex; justify-content: space-between; gap: 2ch; white-space: nowrap; }
+.rail > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.rail .mid { flex: 1; text-align: center; }
+header.rail { margin-bottom: 1.6em; }
+footer.rail { margin-top: 2em; }
+
+section { margin-bottom: 1.6em; }
+h2 { font-size: inherit; margin: 0; letter-spacing: .02em; }
+.body { padding-left: var(--indent); }
+.body p { margin: 0 0 1em; max-width: 92ch; }
+.body p:last-child { margin-bottom: 0; }
+
+/* OPTIONS-style list: flag on its own line, text indented beneath */
+dl { margin: 0; }
+dd { margin: 0 0 .9em var(--indent); max-width: 92ch; }
+dd:last-child { margin-bottom: 0; }
+
+/* less(1) prompt pinned to the bottom */
+.pager {
+  position: sticky;
+  bottom: 0;
+  margin: 2em calc(-1 * var(--gutter)) 0;
+  padding: 0 var(--gutter) 4px;
+  background: var(--bg);
+}
+.pager .rev { background: var(--fg); color: var(--bg); padding: 0 .5ch; }
+.cursor { display: inline-block; width: 1ch; background: var(--fg); animation: blink 1.06s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+
+@media (max-width: 640px) {
+  :root { --indent: 3ch; --gutter: 16px; }
+  body { font-size: 13.5px; }
+  .rail .mid { display: none; }
+  .pager .rev { white-space: normal; }
+}

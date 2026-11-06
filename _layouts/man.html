@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="color-scheme" content="dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/man.css' | relative_url }}">
+</head>
+<body>
+  {%- capture man_id -%}{{ site.man.name }}({{ site.man.section }}){%- endcapture -%}
+  {%- capture man_lower -%}{{ site.man.name | downcase }}({{ site.man.section }}){%- endcapture -%}
+  <main>
+    <header class="rail">
+      <span>{{ man_id }}</span><span class="mid">{{ site.man.manual }}</span><span>{{ man_id }}</span>
+    </header>
+
+    {{ content }}
+
+    <footer class="rail">
+      <span>{{ site.url | remove: "https://" }}</span><span class="mid">{{ site.time | date: "%Y-%m-%d" }}</span><span>{{ man_id }}</span>
+    </footer>
+  </main>
+
+  <div class="pager"><span class="rev">{% if page.pager %}{{ page.pager }}{% else %}Manual page {{ man_lower }} (END) (press h for help or q to quit){% endif %}</span> <span class="cursor">&nbsp;</span></div>
+</body>
+</html>

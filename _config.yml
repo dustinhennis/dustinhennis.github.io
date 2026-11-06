@@ -1,28 +1,14 @@
-title: GitHub Pages (dustinhennis)
-author:
-  name: Dustin Hennis
-  email: dustin at protocol96 dot com
-description: > 
-  My GitHub pages site for random posts and testing
+title: dhennis(1)
+description: Dustin Hennis — links and what I'm up to now.
+url: https://dustinhennis.github.io
 
-show_excerpts: true
+# Shown in the man page header/footer rails
+man:
+  name: DHENNIS
+  section: 1
+  manual: General Commands Manual
 
-minima:
-  date_format: "%b %-d, %Y"
-
-  social_links:
-    twitter: dustinhennis
-    github:  dustinhennis
-    linkedin: dustinhennis
-
-header_pages:
- - about.md
- - tags.md
-
-theme: minima
-#remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
- - jekyll-gist
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
