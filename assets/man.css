@@ -1,4 +1,4 @@
-/* Full-width man(1) page: header/footer rails span the screen, sections hang at a 7ch indent like groff output. */
+/* man(1) page in an ~80-column terminal: header/footer rails span the column, sections hang at a 7ch indent like groff output. */
 :root {
   --bg: #000000;
   --fg: #c4c4c4;        /* console grey for running text */
@@ -8,6 +8,7 @@
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --indent: 7ch;
   --gutter: 20px;
+  --cols: 88ch;
   color-scheme: dark;
 }
 
@@ -19,6 +20,7 @@ body {
   font: 15px/1.6 var(--mono);
   margin: 0;
   padding: 20px var(--gutter) 0;
+  max-width: calc(var(--cols) + 2 * var(--gutter));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,12 +47,12 @@ footer.rail { margin-top: 2em; }
 section { margin-bottom: 1.6em; }
 h2 { font-size: inherit; margin: 0; letter-spacing: .02em; }
 .body { padding-left: var(--indent); }
-.body p { margin: 0 0 1em; max-width: 92ch; }
+.body p { margin: 0 0 1em; }
 .body p:last-child { margin-bottom: 0; }
 
 /* OPTIONS-style list: flag on its own line, text indented beneath */
 dl { margin: 0; }
-dd { margin: 0 0 .9em var(--indent); max-width: 92ch; }
+dd { margin: 0 0 .9em var(--indent); }
 dd:last-child { margin-bottom: 0; }
 
 /* less(1) prompt pinned to the bottom */
