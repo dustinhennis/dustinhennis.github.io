@@ -30,7 +30,6 @@ body {
 main { flex: 1; }
 
 b, h2, dt { color: var(--bright); font-weight: 600; }
-.u { text-decoration: underline; text-underline-offset: 3px; }
 .dim { color: var(--dim); }
 
 a { color: var(--bright); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--dim); }
